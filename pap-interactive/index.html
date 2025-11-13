@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PAP Interactive — Experiência Criativa</title>
+  <meta name="description" content="Website interativo, moderno e imersivo para projeto de PAP. Desenvolvido com HTML5, CSS3 e JavaScript (ES6) com animações avançadas." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css" />
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js" defer></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js" defer></script>
+  <!-- Locomotive Scroll for smooth experience -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js" defer></script>
+  <!-- VanillaTilt (opcional) -->
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js" defer></script>
+  <!-- Spline Web Component -->
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.28/build/spline-viewer.js" defer></script>
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%235b7cff'/%3E%3Ctext x='50' y='58' font-size='40' text-anchor='middle' fill='white' font-family='Arial'%3EP%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-inner">
+      <span class="logo">PAP</span>
+      <div class="bar">
+        <span class="bar-fill"></span>
+      </div>
+      <p class="loading-text">a preparar a experiência...</p>
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div id="cursor" class="cursor"></div>
+
+  <!-- Background gradient and particles layer -->
+  <div class="bg-wrap">
+    <canvas id="particles"></canvas>
+    <div class="gradient moving"></div>
+  </div>
+
+  <!-- Smooth Scroll Container -->
+  <main id="smooth-container" data-scroll-container>
+    <!-- Infinite marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="track">
+        <span>criatividade • tecnologia • arte digital • interação • animação • experiência • </span>
+        <span>criatividade • tecnologia • arte digital • interação • animação • experiência • </span>
+        <span>criatividade • tecnologia • arte digital • interação • animação • experiência • </span>
+      </div>
+    </div>
+
+    <!-- Sections will be injected here -->
+    <section id="content"></section>
+
+    <!-- Footer minimal -->
+    <footer class="footer" data-scroll-section>
+      <p>Feito com HTML, CSS e JS • © <span id="year"></span> PAP Interactive</p>
+    </footer>
+  </main>
+
+  <script src="./js/effects.js" defer></script>
+  <script src="./js/main.js" defer></script>
+</body>
+</html>
